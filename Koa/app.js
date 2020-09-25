@@ -1,17 +1,29 @@
-const Koa = require('koa');
-const bodyParser = require('koa-bodyparser')
-const controller = require('./controller')
-const app = new Koa()
+const Koa = require("koa");
+const bodyparser = require("koa-bodyparser");
+const controller = require("./controller");
+const views = require("koa-views");
+const render = views(__dirname + "/views", {
+  extension: "html",
+  map: {
+    html: "ejs",
+  },
+});
+const app = new Koa();
 
-app.use(bodyParser())
+app.use(render);
+app.use(bodyparser());
 
 app.use(async (ctx, next) => {
-  console.log(`${ctx.request.method} ${ctx.request.url}`);
+  console.log(`${ctx.method} ${ctx.url}`);
   await next();
 });
 
-app.use(controller())
+app.use(controller());
 
 app.listen(3000, () => {
-  console.log(`app started at port @ 3000...`);
-})
+  console.log(`server running @ port 3000`);
+});
+
+app.on("error", (err) => {
+  console.error("server error", err);
+});
