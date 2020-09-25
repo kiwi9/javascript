@@ -8,8 +8,10 @@ const render = views(__dirname + "/views", {
     html: "ejs",
   },
 });
+const static = require('koa-static');
 const app = new Koa();
 
+app.use(static(__dirname + '/static'))
 app.use(render);
 app.use(bodyparser());
 
