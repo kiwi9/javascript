@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://mockjs.com/dist/mock.js"></script>
+    <script>
+      Mock.mock("http://api.com", {
+        "user|2-5": [
+          {
+            name: "@cname",
+            "age|1-100": 1,
+            birthday: '@date("yyyy-MM-dd")',
+            city: "@city(true)",
+          },
+        ],
+      });
+
+      Mock.setup({
+        timeout: 400,
+      });
+
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "http://api.com", true);
+      xhr.send(null);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          console.log(xhr.responseText);
+        }
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

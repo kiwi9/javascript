@@ -3,6 +3,10 @@ const app = new Koa();
 const controller = require("./controller");
 const bodyparser = require("koa-bodyparser");
 
+if (process.env.NODE_ENV !== "production") {
+  require("./controllers/mock");
+}
+
 app.use(async (ctx, next) => {
   console.log(`Process ${ctx.request.method} ${ctx.request.url}`);
   await next();

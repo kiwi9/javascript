@@ -16,4 +16,11 @@ module.exports = {
       products,
     };
   },
+
+  "GET /api/city": async (ctx, next) => {
+    ctx.response.type = "application/json";
+    ctx.response.body = {
+      products,
+    };
+  },
 };

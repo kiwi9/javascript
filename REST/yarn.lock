@@ -43,6 +43,11 @@ co@^4.6.0:
   resolved "https://registry.npm.taobao.org/co/download/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
   integrity sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ=
 
+commander@*:
+  version "6.1.0"
+  resolved "https://registry.npm.taobao.org/commander/download/commander-6.1.0.tgz?cache=0&sync_timestamp=1598576088458&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-6.1.0.tgz#f8d722b78103141006b66f4c7ba1e97315ba75bc"
+  integrity sha1-+Ncit4EDFBAGtm9Me6HpcxW6dbw=
+
 content-disposition@~0.5.2:
   version "0.5.3"
   resolved "https://registry.npm.taobao.org/content-disposition/download/content-disposition-0.5.3.tgz#e130caf7e7279087c5616c2007d0485698984fbd"
@@ -275,6 +280,13 @@ mime-types@^2.1.18, mime-types@~2.1.24:
   integrity sha1-R5SfmOJ56lMRn1ci4PNOUpvsAJ8=
   dependencies:
     mime-db "1.44.0"
+
+mockjs@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/mockjs/download/mockjs-1.1.0.tgz#e6a0c378e91906dbaff20911cc0273b3c7d75b06"
+  integrity sha1-5qDDeOkZBtuv8gkRzAJzs8fXWwY=
+  dependencies:
+    commander "*"
 
 ms@2.0.0:
   version "2.0.0"
